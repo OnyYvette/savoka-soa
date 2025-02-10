@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>Savoka Soa - Cire Naturelle</title>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Savoka Soa - Production et vente de cire naturelle 'Savoka Natoraly' et 'Savoka Tantely'">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <title>Fabrication & Bienfaits - Savoka Soa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
       --primary-color: #2E7D32;
@@ -22,6 +20,12 @@
       box-sizing: border-box;
     }
 
+    a {
+      text-decoration: none;
+      color: #795548;
+      transition: all 0.3s ease;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
@@ -29,29 +33,7 @@
       background-color: var(--background-light);
     }
 
-    a {
-      text-decoration: none;
-      color: #795548;
-      transition: all 0.3s ease;
-    }
-
-    .btn {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background-color: var(--secondary-color);
-      color: white;
-    }
-
-    /* Header avec la navbar */
+    /* Header styles restent les mêmes */
     header {
       background-color: white;
       box-shadow: var(--shadow);
@@ -96,7 +78,7 @@
       height: 2px;
       bottom: -5px;
       left: 0;
-      background-color: var(--primary-color);
+      background-color: #2E7D32;
       transition: width 0.3s ease;
     }
 
@@ -108,123 +90,157 @@
       color: var(--primary-color);
     }
 
-    /* Hero section */
-    .hero {
-      height: 80vh;
+    /* Main content styles */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .fabrication, .bienfaits {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary-color);
+      margin-top: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Process steps */
+    .fabrication ol {
+      list-style: none;
+      counter-reset: steps;
+      margin: 2rem 0;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .fabrication ol li {
+      counter-increment: steps;
+      background: var(--background-light);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: start;
+      transition: transform 0.3s ease;
+    }
+
+    .fabrication ol li:hover {
+      transform: translateX(10px);
+    }
+
+    .fabrication ol li::before {
+      content: counter(steps);
+      background: var(--primary-color);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      background: url('img/banner.jpeg') no-repeat center center;
-      background-size: cover;
-      position: relative;
-      padding: 40px 0;
+      justify-content: center;
+      margin-right: 1rem;
+      flex-shrink: 0;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      filter: blur(5px); /* Add blur effect */
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      color: white;
-      text-align: center; /* Center the text */
-    }
-
-    .hero-content h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-
-    .hero-content p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    /* Section Produits */
-    .products-section {
-      padding: 80px 0;
-      background-color: white;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-      color: var(--primary-color);
-      font-size: 2.5em;
-    }
-
-    .product-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      margin-bottom: 30px;
-    }
-
-    .product-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .product-image {
+    .fabrication img {
       width: 100%;
-      height: 250px;
-      object-fit: cover;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      transition: transform 0.3s ease;
     }
 
-    .product-info {
-      padding: 20px;
+    .fabrication img:hover {
+      transform: scale(1.02);
     }
 
-    .product-title {
-      color: var(--primary-color);
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-
-    .product-description {
-      color: #666;
-      margin-bottom: 20px;
-    }
-
-    /* Section Contact */
-    .contact-section {
-      background-color: var(--background-light);
-      padding: 80px 0;
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
+    /* Benefits grid */
+    .bienfaits {
       background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
     }
 
-    .form-control {
-      border: 2px solid #ddd;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      transition: border-color 0.3s ease;
+    .bienfaits h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
     }
 
-    .form-control:focus {
-      border-color: var(--primary-color);
-      box-shadow: none;
+    .bienfaits p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
     }
 
-    /* Footer moderne */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .benefit-item {
+      background: var(--background-light);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .benefit-item i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .benefit-item h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-item p {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Footer styles */
     footer {
       background: var(--primary-color);
       color: white;
@@ -247,7 +263,6 @@
     .footer-section {
       flex: 1;
       min-width: 200px;
-      text-align: center;
     }
 
     .footer-section h4 {
@@ -275,8 +290,8 @@
 
     .social-links {
       display: flex;
-      align-items: center; /* Center vertically */
-      justify-content: center; /* Center horizontally */
+      align-items: center;
+      justify-content: center;
       gap: 15px;
       margin-top: 0.5rem;
     }
@@ -312,10 +327,6 @@
         text-align: center;
       }
 
-      .hero-content h1 {
-        font-size: 2em;
-      }
-
       .footer-content {
         flex-direction: column;
         text-align: center;
@@ -324,15 +335,10 @@
       .footer-section {
         margin-bottom: 1.5rem;
       }
-
-      .social-links {
-        justify-content: center; /* Center horizontally */
-      }
     }
   </style>
 </head>
 <body>
-<!-- Header avec navbar -->
 <header>
   <nav>
     <div class="logo">Savoka Soa</div>
@@ -340,81 +346,52 @@
       <li><a href="index.html">Accueil</a></li>
       <li><a href="fabrication.html">Fabrication & Bienfaits</a></li>
       <li><a href="formation.html">Formation des Artisans</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- Hero section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Savoka Natoraly & Savoka Tantely</h1>
-    <p>Cire naturelle artisanale, issue de traditions ancestrales.</p>
-    <a href="fabrication.html" class="btn">Découvrez notre cire</a>
-  </div>
-</section>
+<main>
+  <section class="fabrication">
+    <h2>Processus de Fabrication</h2>
+    <p>Notre cire est fabriquée selon des méthodes traditionnelles, respectueuses de l'environnement et du bien-être des abeilles. Voici les étapes clés :</p>
+    <ol>
+      <li><b>Récolte du miel :</b> Nous récoltons le miel avec soin, en laissant toujours une quantité suffisante pour les abeilles.</li>
+      <li><b>Extraction de la cire :</b> La cire est extraite des rayons de miel par un processus doux de fonte et de filtrage.</li>
+      <li><b>Purification :</b> La cire est purifiée naturellement pour éliminer les impuretés et garantir sa qualité.</li>
+      <li><b>Moulage :</b> La cire est ensuite moulée en différentes formes, selon les produits.</li>
+    </ol>
+    <img src="img/fabrication.jpeg" alt="Processus de fabrication de la cire">
+  </section>
 
-<!-- Section Produits -->
-<section class="products-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Nos Produits</h2>
-    <div class="row">
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="product-card">
-          <img src="img/produit1.jpeg" alt="Savoka Natoraly" class="product-image">
-          <div class="product-info">
-            <h3 class="product-title">Savoka Natoraly</h3>
-            <p class="product-description">Cire naturelle pure, extraite avec soin selon nos traditions.</p>
-            <a href="#" class="btn">Découvrir</a>
-          </div>
-        </div>
+  <section class="bienfaits">
+    <h2>Bienfaits de la cire naturelle</h2>
+    <p>La cire naturelle possède de nombreuses propriétés bénéfiques :</p>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <i class="fas fa-tint"></i>
+        <h3>Hydratante</h3>
+        <p>Elle hydrate et protège la peau.</p>
       </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="product-card">
-          <img src="img/produit2.jpeg" alt="Savoka Tantely" class="product-image">
-          <div class="product-info">
-            <h3 class="product-title">Savoka Tantely</h3>
-            <p class="product-description">Cire naturelle infusée au miel, pour des bienfaits amplifiés.</p>
-            <a href="#" class="btn">Découvrir</a>
-          </div>
-        </div>
+      <div class="benefit-item">
+        <i class="fas fa-leaf"></i>
+        <h3>Apaisante</h3>
+        <p>Elle calme les irritations et les inflammations.</p>
       </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="product-card">
-          <img src="img/produit3.jpeg" alt="Pack Duo" class="product-image">
-          <div class="product-info">
-            <h3 class="product-title">Pack Duo</h3>
-            <p class="product-description">Profitez de nos deux produits phares à prix avantageux.</p>
-            <a href="#" class="btn">Découvrir</a>
-          </div>
-        </div>
+      <div class="benefit-item">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Protectrice</h3>
+        <p>Elle forme une barrière protectrice contre les agressions extérieures.</p>
+      </div>
+      <div class="benefit-item">
+        <i class="fas fa-seedling"></i>
+        <h3>Naturelle</h3>
+        <p>Elle est exempte de produits chimiques et de substances nocives.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<!-- Section Contact -->
-<section class="contact-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Contactez-nous</h2>
-    <div class="contact-form" data-aos="fade-up" data-aos-delay="100">
-      <form>
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Votre Nom" required>
-        </div>
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Votre Email" required>
-        </div>
-        <div class="mb-3">
-          <textarea class="form-control" rows="4" placeholder="Votre Message" required></textarea>
-        </div>
-        <button type="submit" class="btn">Envoyer</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- Footer moderne -->
 <footer>
   <div class="footer-content">
     <div class="footer-section">
@@ -452,5 +429,6 @@
     once: true
   });
 </script>
+
 </body>
 </html>
