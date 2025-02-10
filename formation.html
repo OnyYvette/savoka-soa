@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation des Artisans - Savoka Soa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2E7D32;
+      --secondary-color: #81C784;
+      --text-color: #333;
+      --background-light: #F5F7F5;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-light);
+    }
+
+    a {
+      text-decoration: none;
+      color: #795548;
+      transition: all 0.3s ease;
+    }
+
+    /* Header avec la navbar */
+    header {
+      background-color: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Main content styles */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .formation {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary-color);
+      margin-top: 0.5rem;
+    }
+
+    h3 {
+      color: var(--primary-color);
+      margin: 2rem 0 1rem;
+      font-size: 1.5rem;
+    }
+
+    .formation p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .formation ul, .formation ol {
+      margin-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .formation li {
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+    }
+
+    .formation img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      transition: transform 0.3s ease;
+    }
+
+    .formation img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Cards for benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .benefit-card {
+      background: var(--background-light);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .benefit-card i {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-card h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-card p {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Footer moderne */
+    footer {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center; /* Center vertically */
+      justify-content: center; /* Center horizontally */
+      gap: 15px;
+      margin-top: 0.5rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+    }
+
+    .copyright {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .social-links {
+        justify-content: center; /* Center horizontally */
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">Savoka Soa</div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="fabrication.html">Fabrication & Bienfaits</a></li>
+      <li><a href="formation.html">Formation des Artisans</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="formation">
+    <h2>Formation des Artisans</h2>
+    <p>La formation des artisans est essentielle pour garantir la qualité et l'authenticité de nos produits. Nous offrons un programme complet et personnalisé pour préserver notre savoir-faire traditionnel tout en innovant vers l'avenir.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <i class="fas fa-hands"></i>
+        <h3>Préservation du savoir-faire</h3>
+        <p>Transmission des techniques traditionnelles de fabrication pour maintenir l'authenticité de nos produits.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-award"></i>
+        <h3>Qualité garantie</h3>
+        <p>Maîtrise des normes de qualité et de sécurité pour assurer l'excellence de notre production.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-user-graduate"></i>
+        <h3>Autonomie</h3>
+        <p>Développement des compétences nécessaires pour une production indépendante et durable.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Durabilité</h3>
+        <p>Promotion de pratiques respectueuses de l'environnement et des abeilles pour un avenir meilleur.</p>
+      </div>
+    </div>
+
+    <h3>Notre processus de formation</h3>
+    <ol>
+      <li><b>Formations pratiques :</b> Ateliers sur le terrain, manipulation des outils et des matières premières.</li>
+      <li><b>Accompagnement progressif :</b> Suivi personnalisé et conseils adaptés à chaque artisan.</li>
+      <li><b>Support technique :</b> Assistance technique et logistique pour la production et la commercialisation.</li>
+    </ol>
+
+    <img src="img/formation.jpeg" alt="Formation des artisans">
+  </section>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Savoka Soa</h4>
+      <p>Production artisanale de cire naturelle depuis des générations.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Liens Rapides</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="fabrication.html">Fabrication & Bienfaits</a></li>
+        <li><a href="formation.html">Formation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Suivez-nous</h4>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; 2025 Savoka Soa - Tous droits réservés</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+</body>
+</html>
