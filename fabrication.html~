@@ -113,7 +113,7 @@
       height: 80vh;
       display: flex;
       align-items: center;
-      background: url('img/banner.jpeg') no-repeat center center;
+      background: url('images/banner.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
       padding: 40px 0;
@@ -361,7 +361,7 @@
     <div class="row">
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="product-card">
-          <img src="img/produit1.jpeg" alt="Savoka Natoraly" class="product-image">
+          <img src="images/produit1.jpg" alt="Savoka Natoraly" class="product-image">
           <div class="product-info">
             <h3 class="product-title">Savoka Natoraly</h3>
             <p class="product-description">Cire naturelle pure, extraite avec soin selon nos traditions.</p>
@@ -371,7 +371,7 @@
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
         <div class="product-card">
-          <img src="img/produit2.jpeg" alt="Savoka Tantely" class="product-image">
+          <img src="images/produit2.jpg" alt="Savoka Tantely" class="product-image">
           <div class="product-info">
             <h3 class="product-title">Savoka Tantely</h3>
             <p class="product-description">Cire naturelle infusée au miel, pour des bienfaits amplifiés.</p>
@@ -381,7 +381,7 @@
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
         <div class="product-card">
-          <img src="img/produit3.jpeg" alt="Pack Duo" class="product-image">
+          <img src="images/produit3.jpg" alt="Pack Duo" class="product-image">
           <div class="product-info">
             <h3 class="product-title">Pack Duo</h3>
             <p class="product-description">Profitez de nos deux produits phares à prix avantageux.</p>
